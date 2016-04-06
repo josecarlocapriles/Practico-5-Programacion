@@ -1,0 +1,52 @@
+//11.Hacer un programa controlado por un menú para calcular las áreas de las siguientes figuras
+
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <stdlib.h>
+using namespace std;
+
+void main() {
+   int  opcion;
+   double l, r, b, h, a;
+   
+   do {
+     cout << endl;
+     cout << "1.- Area de un Cuadrado" << endl;
+     cout << "2.- Area de un Circulo" << endl;
+     cout << "3.- Area de un Triangulo" << endl;
+	 cout << "0.- Salir" << endl;
+     cout << "Elige una opcion: " ;
+     cin >> opcion;
+     switch (opcion) {
+		case 1: system ("cls");
+				cout << "Ingrese el Lado: ";
+				cin >> l; 
+				a = l * l;
+				cout << "El Area de el Cuadrado es: " << a <<endl;
+				break;
+	    case 2: system ("cls");
+				cout << "Ingrese el Radio: ";
+				cin >>r; 
+				a = r * r * 3.1416;
+				cout << "El Area de el Circulo es: " << a <<endl;				
+				break;
+	    case 3: system ("cls");
+				cout << "Ingrese la Base: ";
+				cin >>b; 
+				cout << "Ingrese la Altura: ";
+				cin >>h; 
+				r = (b * h) / 2;
+				cout << "El Area de el Triangulo es: " << a <<endl;	
+				break;
+		case 0: system ("cls");
+				cout << "Salir" << endl; 
+				break;
+	    default: system ("cls");
+				cout << "Opcion invalida" << endl;
+		}
+	 } while (opcion != 0);
+   _getch();
+}
