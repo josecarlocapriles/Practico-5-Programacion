@@ -1,0 +1,43 @@
+//1.	Dado el peso P en gramos de una carta; haga un programa para calcular el costo de enviar la carta
+#include "stdafx.h"
+#include <conio.h>
+#include "iostream"
+using namespace std;
+int main() {
+				double costo;
+				double peso;
+				cout << "Ingrese el Peso: ";
+				cin >> peso;
+				if ((peso<=0)) {
+					cout << "Valor Invalido" << endl;
+				} else {
+					if ((peso<50)) {
+						costo = peso * 1.5;
+						cout << "El Costo es: " << costo << endl;
+					} else {
+						if ((peso<=100)) {
+							costo = peso*4;
+							cout << "El Costo es: " << costo << endl;
+						} else {
+							if ((peso<=200)) {
+								costo = peso*6;
+								cout << "El Costo es: " << costo << endl;
+							} else {
+								if ((peso<=350)) {
+									costo = peso*10.5;
+									cout << "El Costo es: " << costo << endl;
+								} else {
+									if ((peso<=500)) {
+										costo = peso*15;
+										cout << "El Costo es: " << costo << endl;
+									} else {
+										cout << "No Se Puede Enviar" << endl;
+									}
+								}
+							}
+						}
+					}
+				}
+				_getch();
+				return 0;
+			}
