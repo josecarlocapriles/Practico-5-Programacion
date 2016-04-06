@@ -1,0 +1,38 @@
+//6.	Calcular la solución de una ecuación cuadrática considerando todos los casos posibles. 
+
+
+#include "stdafx.h"
+#include <conio.h>
+#include "iostream"
+#include <math.h>
+
+using namespace std;
+int main() {
+	float a, b, c, x1, x2, r, q;
+	cout << "Ingrese el Valor de a: ";
+	cin >> a;
+	if (a==0){
+		cout << "Valor no valido";}
+	else 	{cout << "Ingrese el Valor de b: ";
+			cin >> b;
+			cout << "Ingrese el Valor de c: ";
+			cin >> c;
+			r = ((b*b)-(4*a*c));
+			q = sqrt (r);
+			if (q>=0) { 
+					x1 = (-b + q)/(2*a);
+					x2 = (-b - q)/(2*a);
+					if (x1==x2)
+						cout << "La Solucion Unica es: " << x1 <<endl;
+					else {
+					cout << "La Solucion 1 es: " << x1<<endl;
+					cout << "La Solucion 2 es: " << x2<<endl;}}
+			else {
+				cout << "La Solucion 1 es: (" << -b << " + (" << r << "i))/" << (2*a) << endl;
+				cout << "La Solucion 2 es: (" << -b << " - (" << r << "i))/" << (2*a) << endl;
+			}
+	}
+_getch();		
+}
+	
+ 
