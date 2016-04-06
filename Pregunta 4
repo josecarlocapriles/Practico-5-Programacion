@@ -1,0 +1,71 @@
+//4.Dados dos horarios en formato de 24 horas, minutos y segundos, calcule el tiempo transcurrido entre ellos.
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int main() {
+	int h1, h2, m1, m2, s1, s2, d1, d2, dt, h, m, s;
+	double dh, dm, ds;
+	h = 0;
+	m = 0;
+	s = 0;
+	cout << "Ingrese la Hora 1: " << endl;
+	cin >> h1;
+
+	if ((h1>23) | (h1<0))
+		cout << "Valor Invalido";
+	else {
+		cin >> m1;
+		if ((m1>59) | (m1<0))
+			cout <<"Valor Invalido";
+		else {
+			cin >> s1;
+			if ((s1>59) |(s1<0))
+				cout << "Valor Invalido";
+			else {
+				cout << "Ingrese la Hora 2:" << endl;
+				cin >> h2;
+				if ((h2>23) | (h2<0))
+				cout << "Valor Invalido";
+				else {
+					cin >> m2;
+					if ((m2>59) | (m2<0))
+					cout << "Valor Invalido";
+					else {
+						cin >> s2;
+						if ((s2>59) | (s2<0))
+							cout << "Valor Invalido";
+						else {
+							d1 = (h1 * 3600 + m1 * 60 + s1);
+							d2 = h2 * 3600 + m2 * 60 + s2;
+							dt = d2 - d1;
+							if (dt<0)
+								cout <<"Datos Erroneos";
+							else {
+								dh = dt / 3600;
+								while (dh>=1) {
+									dh = dh - 1;
+									h = h++;
+									}
+								dm = (dt - h * 3600)/60;
+								while (dm>=1) {
+									dm = dm - 1;
+									m = m++;
+									}
+								ds = dt - h * 3600 - m * 60;
+								while (ds>=1) {
+									ds = ds - 1;
+									s = s++;
+									}
+								cout << "La diferencia es de: " << h << " horas, ";
+								cout << m << " minutos, y ";
+								cout << s << " Segundos";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	_getch();
+	}
