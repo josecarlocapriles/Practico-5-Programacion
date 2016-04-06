@@ -1,0 +1,36 @@
+// 9. Escribase un programa para calcular X, Y del siguiente sistema de ecuaciones lineales.
+
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int main() {
+	double a, b, c, d, e, f, x, y, dy, dx, da;
+	cout << "Ingrese el Valor a" << endl;
+	cin >> a;
+	cout << "Ingrese el Valor b" << endl;
+	cin >> b;
+	cout << "Ingrese el Valor c" << endl;
+	cin >> c;
+	cout << "Ingrese el Valor d" << endl;
+	cin >> d;
+	cout << "Ingrese el Valor e" << endl;
+	cin >> e;
+	cout << "Ingrese el Valor f" << endl;
+	cin >> f;
+	da = ((a * d) - (b * c));
+	dx = ((e * d) - (b * f));
+	dy = ((a * f) - (e * c));
+	if (da == 0)
+		if ((dx==0)&&(dy==0))
+			cout << "Tiene Soluciones Infinitas";
+		else
+			cout << "No Tiene Solucion";
+	else {
+	x = dx / da;
+	y = dy / da;
+	cout << "x es igual a: " << x << endl;
+	cout << "y es igual a: " << y << endl;
+	}
+	_getch();
+}
