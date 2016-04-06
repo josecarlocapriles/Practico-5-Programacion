@@ -1,0 +1,94 @@
+//5.Dada una fecha en día, mes y año, hacer un programa que determine si es ‘primavera’, ‘verano’, ‘otoño’ o ‘invierno’. 
+
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int main() {
+	int d, m, a;
+	cout << "Ingrese el dia: "<< endl;
+	cin >> d;
+	if ((d>31) | (d<1))
+		cout<< "Valor Invalido";
+	else {
+		cout << "Ingrese el mes: " << endl;
+		cin >> m;
+		if ((m>12) | (m<1))
+			cout << "Valor Invalido";
+		else { 
+			if ((m==2) && (d>29))
+				cout << "Valor Invalido";
+			else {
+				if ((m==4) && (d>30))
+					cout << "Valor Invalido";
+				else {
+					if ((m==6) && (d>30))
+						cout << "Valor Invalido";
+					else {
+						if ((m==9) && (d>30))
+							cout << "Valor Invalido";
+						else {
+							if ((m==11) && (d>30))
+								cout<<"Valor Invalido";
+							else {
+								cout << "Ingrese el A\xA4o: "<< endl;
+								cin>>a;
+								if (((m==2) && (d>28)) && ((a%4==0 && (a%400==0 || a%100!=0)))){
+									if ((d>=21) && (m==9))
+										cout << "Es Primavera";
+									else {
+										if ((m==10) | (m==11))
+											cout << "Es Primavera";
+										else {
+											if ((d<21) && (m==12))
+												cout << "Es Primavera";
+											else {
+												if ((d>=21) && (m==12))
+													cout << "Es Verano";
+												else {
+													if((m==1) | (m==2))
+														cout << "Es Verano";
+													else {
+														if ((d<21) && (m==3))
+															cout << "Es Verano";
+														else {
+															if ((d>=21) && (m==3))
+																cout << "Es Otoño";
+															else {
+																if ((m==4) | (m==5))
+																	cout << "Es Otoño";
+																else {
+																	if ((d<21) && (m==6))
+																		cout << "Es Otoño";
+																	else {
+																		if ((d>=21) && (m==6))
+																			cout << "Es Invierno";
+																		else {
+																			if((m==7) | (m==8))
+																				cout << "Es Invierno";
+																			else {
+																					cout << "Es Invierno";
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+								else 
+									cout << "Valor Invalido";
+							}
+						}
+							
+					}
+				}
+			}
+		}
+	}
+	_getch();
+}
