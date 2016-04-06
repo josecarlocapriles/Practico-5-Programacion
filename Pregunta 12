@@ -1,0 +1,50 @@
+//12. Hacer un programa C para calcular la nota  final. 
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <stdlib.h>
+using namespace std;
+
+void main() {
+   int  opcion, nf, f;
+   double e1, e2, ef, np;
+   
+   do {
+     cout << endl;
+     cout << "1.- Calcular Nota" << endl;
+	 cout << "0.- Salir" << endl;
+     cout << "Elige una opcion: " ;
+     cin >> opcion;
+     switch (opcion) {
+		case 1: system ("cls");
+				cout << "Ingrese la Nota del Primer Examen Parcial: ";
+				cin >> e1;
+				cout << "Ingrese la Nota del Segundo Examen Parcial: ";
+				cin >> e2;
+				cout << "Ingrese la Nota Practica: ";
+				cin >> np;
+				cout << "Ingrese la Cantidad de Faltas: ";
+				cin >> f;
+				if (f>9)
+					ef = 0;
+				else{
+					cout << "Ingrese la Nota de el Examen Final: ";
+					cin >> ef;
+				}
+				nf = (e1 * 0.2) + (e2 * 0.2) + (np * 0.2) + (ef * 0.4);
+				cout << "La Nota Final es: " << nf << endl;
+				if (nf>=51)
+					cout << "Aprobo la Materia Felicidades " << endl;
+				else
+					cout << "Usted Reprobo la Materia " << endl;
+				break;
+		case 0: system ("cls");
+				cout << "Presione Cualquier Tecla para Salir" << endl; 
+				break;
+	    default: system ("cls");
+				cout << "Opcion invalida" << endl;
+		}
+	 } while (opcion != 0);
+   _getch();
+}
