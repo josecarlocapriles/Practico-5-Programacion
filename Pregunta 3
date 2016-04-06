@@ -1,0 +1,43 @@
+//3.Dado un número entero positivo N menor que 10000, desglosar el número en cuatro variables correspondientes a sus dígitos: unidades (u), decenas (d), centenas (c), unidades de mil (m).
+
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+
+using namespace std;
+int main()
+{ int a, b, c, d,i;
+cout << "Ingrese un valor menor a 10000"<<endl;
+cin >> a;
+i = 0;
+b = 0;
+c = 0;
+d = 0;
+if (a>9999)
+	cout << "El valor es Invalido";
+else {
+	while (a>1000) {
+		a = a - 1000;
+		i = i++;
+		}
+
+	while (a>100) {
+		a = a - 100;
+		b = b++;
+		}
+	while (a>10) {
+		a = a - 10;
+		c = c++;
+		}
+	while (a>0) {
+		a = a - 1;
+		d = d++;
+		}
+	cout << "Hay " << i << " Unidades de mil" << endl;
+	cout << "Hay " << b << " Centenas" << endl;
+	cout << "Hay " << c << " Decenas"  << endl;
+	cout << "Hay " << d << " Unidades" << endl;
+	}
+	_getch();
+}
